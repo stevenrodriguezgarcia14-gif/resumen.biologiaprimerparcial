@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcial de Biología - Material de estudio interactivo</title>
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --accent:#0f766e;
+      --accent2:#2563eb;
+      --warn:#b45309;
+      --danger:#b91c1c;
+      --ok:#166534;
+      --border:#dbe3ee;
+      --shadow:0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    header{
+      background:linear-gradient(135deg,#0f766e,#2563eb);
+      color:#fff;
+      padding:32px 20px;
+      position:sticky;
+      top:0;
+      z-index:5;
+      box-shadow:var(--shadow);
+    }
+    header h1{
+      margin:0 0 8px;
+      font-size:30px;
+    }
+    header p{
+      margin:0;
+      max-width:980px;
+      opacity:.96;
+    }
+    nav{
+      background:#eaf1fb;
+      border-bottom:1px solid var(--border);
+      padding:12px 20px;
+      position:sticky;
+      top:116px;
+      z-index:4;
+    }
+    nav a{
+      display:inline-block;
+      margin:6px 10px 6px 0;
+      padding:8px 12px;
+      text-decoration:none;
+      color:#0f172a;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-size:14px;
+    }
+    main{
+      max-width:1100px;
+      margin:24px auto 80px;
+      padding:0 16px;
+    }
+    section{
+      margin-bottom:20px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    details{
+      border-top:1px solid var(--border);
+    }
+    details:first-of-type{
+      border-top:none;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:18px 22px;
+      font-weight:700;
+      background:#fbfdff;
+      border-bottom:1px solid transparent;
+    }
+    summary::-webkit-details-marker{display:none}
+    details[open] summary{
+      border-bottom:1px solid var(--border);
+      background:#f8fbff;
+    }
+    .content{
+      padding:18px 22px 26px;
+    }
+    .pill{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      margin:0 6px 8px 0;
+      background:#e6fffb;
+      color:#115e59;
+      border:1px solid #b9f5ee;
+    }
+    .box{
+      border-left:5px solid var(--accent2);
+      background:#f8fbff;
+      padding:14px 16px;
+      margin:14px 0;
+      border-radius:10px;
+    }
+    .box.warn{
+      border-left-color:var(--warn);
+      background:#fffaf0;
+    }
+    .box.danger{
+      border-left-color:var(--danger);
+      background:#fff5f5;
+    }
+    .box.ok{
+      border-left-color:var(--ok);
+      background:#f0fdf4;
+    }
+    h2,h3,h4{
+      margin-top:0;
+    }
+    ul,ol{
+      margin-top:8px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:14px 0;
+      background:#fff;
+      font-size:15px;
+    }
+    th,td{
+      border:1px solid var(--border);
+      padding:10px 12px;
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      background:#eff6ff;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .mini{
+      font-size:14px;
+      color:var(--muted);
+    }
+    .tag{
+      font-weight:700;
+      color:var(--accent2);
+    }
+    .highlight{
+      background:#fff7cc;
+      padding:2px 6px;
+      border-radius:6px;
+    }
+    .footer-note{
+      color:var(--muted);
+      font-size:14px;
+      margin-top:10px;
+    }
+    @media (max-width:800px){
+      nav{top:132px}
+      .two-col{grid-template-columns:1fr}
+      header h1{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Parcial de Biología - Presentación interactiva de estudio</h1>
+    <p>
+      Material completo para entender la materia del parcial con enfoque en conceptos, procesos, imágenes, patrones del profesor y temas con alta probabilidad de evaluación.
+    </p>
+  </header>
+
+  <nav>
+    <a href="#uso">Cómo usar</a>
+    <a href="#patrones">Patrones del profesor</a>
+    <a href="#tema1">Biología básica y método científico</a>
+    <a href="#tema2">Química biológica</a>
+    <a href="#tema3">Moléculas biológicas</a>
+    <a href="#tema4">Célula y membrana</a>
+    <a href="#tema5">Metabolismo y enzimas</a>
+    <a href="#tema6">Fotosíntesis</a>
+    <a href="#tema7">Respiración celular</a>
+    <a href="#tema8">Ciclo celular y meiosis</a>
+    <a href="#tema9">ADN y expresión génica</a>
+    <a href="#repaso">Repaso final</a>
+  </nav>
+
+  <main>
+
+    <section id="uso">
+      <div class="content">
+        <h2>Cómo usar este material</h2>
+        <span class="pill">Estudio guiado</span>
+        <span class="pill">Enfoque conceptual</span>
+        <span class="pill">Pensado para parcial</span>
+        <p>
+          Este material no está hecho para memorizar frases aisladas, sino para ayudarte a reconocer patrones, interpretar imágenes, justificar respuestas y detectar trampas comunes. 
+          La idea es que puedas responder preguntas de selección única, falso o verdadero, asociación y desarrollo.
+        </p>
+        <div class="box ok">
+          <strong>Cómo estudiar mejor:</strong>
+          primero lee “Lo más importante del tema”, luego revisa las comparaciones y al final practica las secciones “Lo que el profesor podría preguntar” y “Posibles confusiones comunes”.
+        </div>
+      </div>
+    </section>
+
+    <section id="patrones">
+      <div class="content">
+        <h2>Patrones del profesor</h2>
+        <p>
+          Por lo trabajado con los exámenes previos, el profesor mezcla memoria conceptual con interpretación de procesos. 
+          No solo pregunta definiciones; también pide identificar una estructura, justificar una respuesta, diferenciar conceptos parecidos y leer diagramas de metabolismo, meiosis o membranas.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de pregunta</th>
+              <th>Qué evalúa realmente</th>
+              <th>Qué debes hacer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Selección única</td>
+              <td>Distinguir conceptos muy parecidos</td>
+              <td>Leer palabra por palabra; una sola palabra cambia toda la respuesta</td>
+            </tr>
+            <tr>
+              <td>Falso / verdadero</td>
+              <td>Precisión conceptual</td>
+              <td>Buscar palabras absolutas como “solo”, “siempre”, “nunca”</td>
+            </tr>
+            <tr>
+              <td>Asocie</td>
+              <td>Reconocimiento rápido de vocabulario</td>
+              <td>Relacionar función, estructura y proceso</td>
+            </tr>
+            <tr>
+              <td>Desarrollo</td>
+              <td>Comprensión real</td>
+              <td>Nombrar el proceso y luego justificarlo con evidencia del diagrama</td>
+            </tr>
+            <tr>
+              <td>Imágenes</td>
+              <td>Interpretación biológica</td>
+              <td>Detectar partes, dirección del proceso y resultado final</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="box warn">
+          <strong>Temas con alta probabilidad:</strong>
+          enlaces químicos, agua, biomoléculas, membrana y transporte, enzimas, ATP, exergónica vs endergónica, fotosíntesis, respiración, ciclo de Krebs, cromatina, mitosis/meiosis, ADN-ARN-proteína.
+        </div>
+      </div>
+    </section>
+
+    <section id="tema1">
+      <details open>
+        <summary>1. Biología básica y método científico</summary>
+        <div class="content">
+          <p>
+            La biología estudia la vida y sus niveles de organización, desde moléculas y células hasta ecosistemas. 
+            Un ser vivo se caracteriza por estar compuesto por células, usar energía, responder al ambiente, mantener homeostasis, crecer, reproducirse y evolucionar.
+          </p>
+
+          <h3>Conceptos clave</h3>
+          <ul>
+            <li><span class="tag">Homeostasis:</span> mantenimiento de condiciones internas estables dentro de límites compatibles con la vida.</li>
+            <li><span class="tag">Metabolismo:</span> suma de todas las reacciones químicas de la célula.</li>
+            <li><span class="tag">Evolución:</span> cambio en poblaciones a lo largo del tiempo.</li>
+            <li><span class="tag">Célula:</span> unidad más pequeña de vida.</li>
+          </ul>
+
+          <h3>Método científico</h3>
+          <ol>
+            <li>Observación.</li>
+            <li>Pregunta.</li>
+            <li>Hipótesis.</li>
+            <li>Predicción.</li>
+            <li>Experimento o recolección de datos.</li>
+            <li>Análisis de resultados.</li>
+            <li>Conclusión y comunicación.</li>
+          </ol>
+
+          <div class="box">
+            <strong>Idea que suele preguntar el profesor:</strong>
+            después de plantear hipótesis y predicción, la etapa siguiente normalmente es diseñar o realizar el experimento para poner a prueba la predicción.
+          </div>
+
+          <h3>Lo más importante del tema</h3>
+          <ul>
+            <li>Diferenciar observación, hipótesis, predicción y teoría.</li>
+            <li>Saber que una teoría científica no es una “opinión”, sino una explicación amplia respaldada por evidencia.</li>
+            <li>Entender variable independiente y dependiente.</li>
+          </ul>
+
+          <h3>Posibles confusiones comunes</h3>
+          <ul>
+            <li>Hipótesis no es conclusión.</li>
+            <li>Teoría no significa “algo no comprobado”.</li>
+            <li>Control no es ausencia total de condiciones, sino referencia para comparar.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema2">
+      <details>
+        <summary>2. Química biológica: átomos, enlaces y agua</summary>
+        <div class="content">
+          <p>
+            Mucho del parcial se apoya en entender por qué las moléculas se comportan como se comportan. 
+            Si comprendes enlaces, polaridad y agua, después se vuelve más fácil entender membranas, enzimas, ADN y transporte.
+          </p>
+
+          <h3>Enlaces químicos</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Qué ocurre</th>
+                <th>Ejemplo</th>
+                <th>Clave de examen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Iónico</td>
+                <td>Un átomo cede electrones y otro los gana; se forman iones</td>
+                <td>NaCl</td>
+                <td>La sal de mesa no es covalente no polar</td>
+              </tr>
+              <tr>
+                <td>Covalente no polar</td>
+                <td>Se comparten electrones de manera más equitativa</td>
+                <td>Enlaces C-H</td>
+                <td>Frecuente en regiones hidrofóbicas</td>
+              </tr>
+              <tr>
+                <td>Covalente polar</td>
+                <td>Se comparten electrones de forma desigual</td>
+                <td>O-H en agua</td>
+                <td>Genera cargas parciales</td>
+              </tr>
+              <tr>
+                <td>Puente de hidrógeno</td>
+                <td>Atracción entre moléculas polares o regiones polares</td>
+                <td>Entre moléculas de agua</td>
+                <td>Explica muchas propiedades del agua</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Agua y sus propiedades</h3>
+          <ul>
+            <li>Es polar porque el oxígeno atrae más los electrones que el hidrógeno.</li>
+            <li>Forma puentes de hidrógeno entre moléculas.</li>
+            <li>Tiene cohesión, adhesión y tensión superficial.</li>
+            <li>Es excelente solvente para sustancias polares e iónicas.</li>
+          </ul>
+
+          <div class="two-col">
+            <div class="box ok">
+              <h4>Lo más importante del tema</h4>
+              <ul>
+                <li>NaCl = enlace iónico.</li>
+                <li>Agua = molécula polar.</li>
+                <li>Puentes de hidrógeno = responsables de muchas propiedades del agua.</li>
+                <li>pH = concentración de iones hidrógeno.</li>
+              </ul>
+            </div>
+            <div class="box danger">
+              <h4>Posibles confusiones comunes</h4>
+              <ul>
+                <li>Confundir covalente polar con puente de hidrógeno.</li>
+                <li>Decir que la sal de mesa es covalente no polar.</li>
+                <li>Creer que el agua disuelve cualquier sustancia; no disuelve bien compuestos muy hidrofóbicos.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Lo que el profesor podría preguntar</h3>
+          <ul>
+            <li>Qué tipo de enlace hay en NaCl.</li>
+            <li>Qué explica la tensión superficial del agua.</li>
+            <li>Por qué el agua es polar.</li>
+            <li>Diferencia entre solución ácida, básica y neutra.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema3">
+      <details>
+        <summary>3. Moléculas biológicas</summary>
+        <div class="content">
+          <p>
+            Aquí el profesor suele combinar estructura, función y reconocimiento de ejemplos. 
+            No basta con saber nombres: debes saber de qué están hechas, para qué sirven y cómo reconocer pistas en una pregunta.
+          </p>
+
+          <h3>Biomoléculas principales</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Biomolécula</th>
+                <th>Monómero o componente</th>
+                <th>Funciones</th>
+                <th>Pista útil</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Carbohidratos</td>
+                <td>Monosacáridos</td>
+                <td>Energía rápida, estructura</td>
+                <td>Glucosa, almidón, celulosa</td>
+              </tr>
+              <tr>
+                <td>Lípidos</td>
+                <td>No son polímeros clásicos; incluyen ácidos grasos y glicerol</td>
+                <td>Reserva, membranas, hormonas</td>
+                <td>Regiones ricas en C y H, no polares</td>
+              </tr>
+              <tr>
+                <td>Proteínas</td>
+                <td>Aminoácidos</td>
+                <td>Enzimas, estructura, transporte, señalización</td>
+                <td>Su función depende de la forma</td>
+              </tr>
+              <tr>
+                <td>Ácidos nucleicos</td>
+                <td>Nucleótidos</td>
+                <td>Almacenan y expresan información genética</td>
+                <td>Tienen azúcar, fosfato y base nitrogenada</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Ácidos nucleicos</h3>
+          <ul>
+            <li>Un nucleótido tiene <span class="highlight">azúcar + fosfato + base nitrogenada</span>.</li>
+            <li>ADN usa desoxirribosa; ARN usa ribosa.</li>
+            <li>En ADN: A con T, C con G.</li>
+            <li>En ARN: A con U, C con G.</li>
+          </ul>
+
+          <div class="box">
+            <strong>Concepto de examen:</strong>
+            los grupos fosfato sí están presentes en los ácidos nucleicos; por eso esa afirmación era verdadera.
+          </div>
+
+          <h3>Lo más importante del tema</h3>
+          <ul>
+            <li>Ribosa = azúcar del ARN.</li>
+            <li>Aminoácidos forman proteínas.</li>
+            <li>Nucleótidos forman ADN y ARN.</li>
+            <li>Lípidos tienen extensas regiones no polares.</li>
+          </ul>
+
+          <h3>Lo que el profesor podría preguntar</h3>
+          <ul>
+            <li>Partes de un nucleótido.</li>
+            <li>Funciones de carbohidratos.</li>
+            <li>Relación entre estructura y función de proteínas.</li>
+            <li>Por qué los lípidos son hidrofóbicos.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema4">
+      <details>
+        <summary>4. Célula, organelos y membrana plasmática</summary>
+        <div class="content">
+          <p>
+            Este bloque es uno de los favoritos para preguntas directas y para asociación. 
+            Aquí se mezclan tipos celulares, funciones de organelos, composición de membrana y transporte.
+          </p>
+
+          <h3>Procariotas vs eucariotas</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>Procariotas</th>
+                <th>Eucariotas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Núcleo</td>
+                <td>No tienen núcleo definido</td>
+                <td>Sí tienen núcleo</td>
+              </tr>
+              <tr>
+                <td>Organelos membranosos</td>
+                <td>No</td>
+                <td>Sí</td>
+              </tr>
+              <tr>
+                <td>ADN</td>
+                <td>Generalmente circular</td>
+                <td>Lineal</td>
+              </tr>
+              <tr>
+                <td>División celular</td>
+                <td>Fisión binaria</td>
+                <td>Mitosis / meiosis</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Organelos clave</h3>
+          <ul>
+            <li><strong>Núcleo:</strong> contiene el ADN y dirige actividades celulares.</li>
+            <li><strong>Ribosomas:</strong> síntesis de proteínas; están formados por ARN y proteínas.</li>
+            <li><strong>Retículo endoplásmico:</strong> síntesis y transporte de moléculas.</li>
+            <li><strong>Aparato de Golgi:</strong> modifica, empaqueta y distribuye proteínas.</li>
+            <li><strong>Lisosoma:</strong> digestión celular.</li>
+            <li><strong>Mitocondria:</strong> respiración celular, producción de ATP.</li>
+            <li><strong>Cloroplasto:</strong> fotosíntesis.</li>
+            <li><strong>Citoesqueleto:</strong> soporte, movimiento y organización interna.</li>
+          </ul>
+
+          <h3>Membrana plasmática</h3>
+          <p>
+            Está compuesta principalmente por fosfolípidos y proteínas. 
+            Su estructura de bicapa se debe a que los fosfolípidos tienen una cabeza hidrofílica y colas hidrofóbicas.
+          </p>
+
+          <h3>Transporte</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Usa energía</th>
+                <th>Ejemplo</th>
+                <th>Idea clave</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Difusión simple</td>
+                <td>No</td>
+                <td>Paso de moléculas pequeñas no polares</td>
+                <td>A favor del gradiente</td>
+              </tr>
+              <tr>
+                <td>Ósmosis</td>
+                <td>No</td>
+                <td>Movimiento de agua</td>
+                <td>El agua va hacia donde hay más soluto</td>
+              </tr>
+              <tr>
+                <td>Difusión facilitada</td>
+                <td>No</td>
+                <td>Canales o transportadores</td>
+                <td>A favor del gradiente</td>
+              </tr>
+              <tr>
+                <td>Transporte activo</td>
+                <td>Sí</td>
+                <td>Bombas de membrana</td>
+                <td>Contra el gradiente</td>
+              </tr>
+              <tr>
+                <td>Endocitosis / fagocitosis</td>
+                <td>Sí</td>
+                <td>Ingreso por vesículas</td>
+                <td>Forma de transporte activo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Análisis de imagen típica: ósmosis y plasmólisis</h3>
+          <p>
+            Cuando una célula vegetal está en un medio hipertónico, el agua sale por ósmosis. 
+            La membrana se separa de la pared celular y eso produce plasmólisis.
+          </p>
+
+          <div class="box warn">
+            <strong>Lo que el profesor podría preguntar:</strong>
+            dirección del agua, tipo de medio a cada lado de una membrana, qué ocurre con glóbulos rojos en medio hipotónico y por qué se da la plasmólisis.
+          </div>
+
+          <h3>Posibles confusiones comunes</h3>
+          <ul>
+            <li>Decir que la mitocondria existe solo en células animales; también está en vegetales.</li>
+            <li>Confundir fagocitosis con difusión; la fagocitosis sí requiere energía.</li>
+            <li>Pensar que pared celular y membrana son lo mismo.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema5">
+      <details>
+        <summary>5. Metabolismo, ATP y enzimas</summary>
+        <div class="content">
+          <p>
+            Este tema aparece muchísimo porque conecta energía, rutas metabólicas y regulación. 
+            Aquí es vital entender palabras precisas como exergónica, endergónica, energía de activación, sustrato, producto, intermediario e inhibición.
+          </p>
+
+          <h3>Reacciones exergónicas y endergónicas</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Energía libre final</th>
+                <th>Resultado</th>
+                <th>Ejemplo general</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Exergónica</td>
+                <td>Productos con menos energía que reactivos</td>
+                <td>Libera energía</td>
+                <td>Degradación de moléculas</td>
+              </tr>
+              <tr>
+                <td>Endergónica</td>
+                <td>Productos con más energía que reactivos</td>
+                <td>Requiere entrada de energía</td>
+                <td>Síntesis de moléculas grandes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="box">
+            <strong>Cómo leer una gráfica:</strong>
+            si los productos terminan más abajo en energía libre que los reactivos, la reacción es exergónica; si terminan más arriba, es endergónica.
+          </div>
+
+          <h3>ATP</h3>
+          <ul>
+            <li>Es la principal molécula transportadora de energía en la célula.</li>
+            <li>Conecta reacciones exergónicas con endergónicas.</li>
+            <li>Al romperse a ADP + Pi, libera energía utilizable.</li>
+          </ul>
+
+          <h3>Enzimas</h3>
+          <ul>
+            <li>Son catalizadores biológicos.</li>
+            <li>Disminuyen la energía de activación.</li>
+            <li>No cambian el resultado final energético de la reacción.</li>
+            <li>Tienen sitio activo donde se unen los sustratos.</li>
+            <li>Su función depende de su estructura tridimensional.</li>
+          </ul>
+
+          <h3>Vocabulario que debes dominar</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Término</th>
+                <th>Qué significa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sustrato</td>
+                <td>Molécula que se une a la enzima</td>
+              </tr>
+              <tr>
+                <td>Sitio activo</td>
+                <td>Región de la enzima donde entran los reactivos</td>
+              </tr>
+              <tr>
+                <td>Producto</td>
+                <td>Sustancia formada al final de una reacción</td>
+              </tr>
+              <tr>
+                <td>Intermediario</td>
+                <td>Sustancia formada durante una reacción o ruta, antes del producto final</td>
+              </tr>
+              <tr>
+                <td>Energía de activación</td>
+                <td>Energía necesaria para iniciar la reacción</td>
+              </tr>
+              <tr>
+                <td>Inhibición competitiva</td>
+                <td>El inhibidor compite por el sitio activo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Regulación enzimática</h3>
+          <ul>
+            <li><strong>Competitiva:</strong> el inhibidor ocupa el sitio activo.</li>
+            <li><strong>No competitiva / alostérica:</strong> el inhibidor se une en otro sitio y cambia la forma de la enzima.</li>
+            <li><strong>Retroalimentación:</strong> el producto final inhibe una enzima temprana de la ruta.</li>
+          </ul>
+
+          <div class="box danger">
+            <strong>Posibles confusiones comunes:</strong>
+            enzima no “aporta” energía a la reacción; solo disminuye la energía de activación. 
+            ATP no es una enzima. 
+            Intermediario no es lo mismo que producto final.
+          </div>
+
+          <h3>Lo que el profesor podría preguntar</h3>
+          <ul>
+            <li>Asociar sustrato, producto, ATP, energía de activación, sitio activo e inhibición competitiva.</li>
+            <li>Identificar una reacción exergónica en un gráfico.</li>
+            <li>Explicar por qué una enzima acelera una reacción.</li>
+            <li>Decir qué pasa si un inhibidor ocupa el sitio activo.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema6">
+      <details>
+        <summary>6. Fotosíntesis</summary>
+        <div class="content">
+          <p>
+            La fotosíntesis convierte energía luminosa en energía química almacenada. 
+            En plantas ocurre en cloroplastos y se divide en reacciones dependientes de la luz y ciclo de Calvin.
+          </p>
+
+          <h3>Reacciones dependientes de la luz</h3>
+          <ul>
+            <li>Ocurren en las membranas de los tilacoides.</li>
+            <li>Captan luz usando pigmentos.</li>
+            <li>Se rompe agua en fotólisis y se libera oxígeno.</li>
+            <li>Se producen ATP y NADPH.</li>
+          </ul>
+
+          <h3>Ciclo de Calvin</h3>
+          <ul>
+            <li>Ocurre en el estroma.</li>
+            <li>Usa CO2, ATP y NADPH.</li>
+            <li>Produce G3P, que luego puede contribuir a formar glucosa.</li>
+          </ul>
+
+          <h3>Rubisco y fotorrespiración</h3>
+          <p>
+            La rubisco puede unirse tanto a CO2 como a O2. 
+            Cuando el oxígeno compite y se une, ocurre fotorrespiración, un proceso costoso para la planta porque reduce la eficiencia de síntesis de carbohidratos.
+          </p>
+
+          <div class="box warn">
+            <strong>Esto ya apareció:</strong>
+            la afirmación “cuando el oxígeno se une al sitio activo de la rubisco puede ocurrir fotorespiración” es verdadera.
+          </div>
+
+          <h3>Plantas C3, C4 y CAM</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Estrategia</th>
+                <th>Ventaja</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>C3</td>
+                <td>Ruta clásica del Calvin</td>
+                <td>Común, pero más sensible a fotorrespiración</td>
+              </tr>
+              <tr>
+                <td>C4</td>
+                <td>Separan espacialmente captura inicial de CO2 y Calvin</td>
+                <td>Reducen fotorrespiración</td>
+              </tr>
+              <tr>
+                <td>CAM</td>
+                <td>Separan temporalmente captura de CO2 y Calvin</td>
+                <td>Ahorran agua</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Lo que el profesor podría preguntar</h3>
+          <ul>
+            <li>Dónde ocurren las dos fases de la fotosíntesis.</li>
+            <li>Qué produce la fase luminosa.</li>
+            <li>Qué hace la rubisco.</li>
+            <li>Qué es la fotorrespiración y por qué perjudica a la planta.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema7">
+      <details>
+        <summary>7. Respiración celular y mitocondria</summary>
+        <div class="content">
+          <p>
+            Este es un tema central porque combina rutas, organelos, moléculas portadoras y lectura de diagramas. 
+            Debes poder identificar qué entra, qué sale, dónde ocurre y qué moléculas capturan energía.
+          </p>
+
+          <h3>Etapas generales</h3>
+          <ol>
+            <li>Glucólisis.</li>
+            <li>Formación de acetil-CoA a partir del piruvato.</li>
+            <li>Ciclo de Krebs.</li>
+            <li>Cadena de transporte de electrones y quimiosmosis.</li>
+          </ol>
+
+          <h3>Glucólisis</h3>
+          <ul>
+            <li>Ocurre en el citosol.</li>
+            <li>La glucosa se degrada en dos piruvatos.</li>
+            <li>Produce ATP y NADH.</li>
+          </ul>
+
+          <h3>Formación de acetil-CoA</h3>
+          <ul>
+            <li>Ocurre en la matriz mitocondrial.</li>
+            <li>El piruvato pierde CO2.</li>
+            <li>Se forma NADH.</li>
+            <li>La coenzima A se une y se forma acetil-CoA.</li>
+          </ul>
+
+          <h3>Ciclo de Krebs</h3>
+          <ul>
+            <li>Ocurre en la matriz mitocondrial.</li>
+            <li>Por cada acetil-CoA produce 1 ATP, 3 NADH, 1 FADH2 y 2 CO2.</li>
+            <li>Por cada glucosa, como entran 2 acetil-CoA, el ciclo produce 2 ATP en total.</li>
+          </ul>
+
+          <h3>Cadena de transporte de electrones</h3>
+          <ul>
+            <li>Ocurre en la membrana interna mitocondrial.</li>
+            <li>NADH y FADH2 entregan electrones.</li>
+            <li>La energía se usa para bombear protones.</li>
+            <li>El oxígeno es el aceptor final de electrones y se forma agua.</li>
+            <li>El gradiente impulsa ATP sintasa y producción de ATP.</li>
+          </ul>
+
+          <h3>Análisis de la imagen trabajada</h3>
+          <p>
+            En la imagen que revisamos, la molécula A era piruvato, un compuesto de tres carbonos que resulta de la degradación incompleta de la glucosa. 
+            Luego se transforma en acetil-CoA, que entra al ciclo de Krebs; en ese proceso se libera CO2 y se produce NADH. 
+            Dentro del ciclo aparecen NADH, FADH2, ATP y CO2 como productos importantes.
+          </p>
+
+          <div class="box ok">
+            <strong>Respuesta clásica de desarrollo:</strong>
+            si preguntan cuántos ATP se producen por glucosa solo en el ciclo de Krebs, la respuesta es <strong>2 ATP</strong>.
+          </div>
+
+          <h3>Fermentación</h3>
+          <p>
+            Si no hay suficiente oxígeno, algunas células regeneran NAD+ mediante fermentación. 
+            Puede ser láctica o alcohólica, dependiendo del producto final.
+          </p>
+
+          <h3>Posibles confusiones comunes</h3>
+          <ul>
+            <li>Decir que el ciclo de Krebs produce grandes cantidades de ATP directamente; la mayoría del ATP total viene después, en la cadena de transporte.</li>
+            <li>Confundir piruvato con acetil-CoA.</li>
+            <li>Olvidar que el oxígeno forma agua al final de la cadena.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema8">
+      <details>
+        <summary>8. Ciclo celular, cromatina, mitosis y meiosis</summary>
+        <div class="content">
+          <p>
+            Este bloque es de alta prioridad. 
+            El profesor pregunta desde fases básicas del ciclo hasta imágenes donde debes identificar qué se está separando y si corresponde a meiosis I o II.
+          </p>
+
+          <h3>Ciclo celular</h3>
+          <ul>
+            <li><strong>Interfase:</strong> crecimiento, duplicación de ADN y preparación.</li>
+            <li><strong>Fase S:</strong> síntesis de ADN.</li>
+            <li>Hay puntos de control para verificar condiciones antes de continuar.</li>
+          </ul>
+
+          <h3>Cromatina</h3>
+          <ul>
+            <li><strong>Eucromatina:</strong> menos compacta, generalmente activa en transcripción.</li>
+            <li><strong>Heterocromatina:</strong> más compacta, generalmente menos activa transcripcionalmente.</li>
+          </ul>
+
+          <div class="box danger">
+            <strong>Ojo:</strong>
+            la frase “heterocromatina se refiere a cromatina genéticamente activada” es falsa.
+          </div>
+
+          <h3>Mitosis</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Etapa</th>
+                <th>Qué ocurre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Profase</td>
+                <td>Los cromosomas empiezan a condensarse</td>
+              </tr>
+              <tr>
+                <td>Metafase</td>
+                <td>Los cromosomas se alinean en el ecuador</td>
+              </tr>
+              <tr>
+                <td>Anafase</td>
+                <td>Se separan las cromátidas hermanas</td>
+              </tr>
+              <tr>
+                <td>Telofase</td>
+                <td>Se forman núcleos hijos</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Meiosis</h3>
+          <p>
+            La meiosis reduce a la mitad el número de cromosomas y produce cuatro células haploides. 
+            Además genera variabilidad genética por entrecruzamiento y distribución independiente de cromosomas homólogos.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>Meiosis I</th>
+                <th>Meiosis II</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Qué se separa</td>
+                <td>Cromosomas homólogos</td>
+                <td>Cromátidas hermanas</td>
+              </tr>
+              <tr>
+                <td>Reducción cromosómica</td>
+                <td>Sí</td>
+                <td>No adicional</td>
+              </tr>
+              <tr>
+                <td>Entrecruzamiento</td>
+                <td>Sí, en profase I</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Cómo leer imágenes de meiosis</h3>
+          <ul>
+            <li>Si ves homólogos emparejados, piensa en meiosis I.</li>
+            <li>Si ves cromosomas individuales alineados con cromátidas hermanas, piensa en meiosis II.</li>
+            <li>Si lo que se separa son cromátidas hermanas, es anafase II.</li>
+          </ul>
+
+          <h3>Análisis de la imagen trabajada</h3>
+          <p>
+            La figura que revisamos correspondía mejor a <strong>metafase II</strong>, porque los cromosomas estaban alineados en el ecuador y aún conservaban sus cromátidas hermanas unidas. 
+            El siguiente paso era <strong>anafase II</strong>, donde los microtúbulos separan las cromátidas hermanas y las llevan a polos opuestos.
+          </p>
+
+          <div class="box">
+            <strong>Ejemplo de razonamiento de examen:</strong>
+            si una célula diploide tiene 12 cromosomas y entra en meiosis, el resultado final serán cuatro células haploides con 6 cromosomas cada una.
+          </div>
+
+          <h3>Lo más importante del tema</h3>
+          <ul>
+            <li>Fase S = duplicación del ADN.</li>
+            <li>Meiosis I separa homólogos.</li>
+            <li>Meiosis II separa cromátidas hermanas.</li>
+            <li>Variabilidad genética = entrecruzamiento + distribución independiente.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="tema9">
+      <details>
+        <summary>9. ADN, ARN y síntesis de proteínas</summary>
+        <div class="content">
+          <p>
+            Este tema suele evaluarse con secuencias cortas, preguntas de estructura o reconocimiento de conceptos básicos de transcripción y traducción.
+          </p>
+
+          <h3>ADN y ARN</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>ADN</th>
+                <th>ARN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Azúcar</td>
+                <td>Desoxirribosa</td>
+                <td>Ribosa</td>
+              </tr>
+              <tr>
+                <td>Bases</td>
+                <td>A, T, C, G</td>
+                <td>A, U, C, G</td>
+              </tr>
+              <tr>
+                <td>Función principal</td>
+                <td>Almacenar información genética</td>
+                <td>Participar en expresión génica</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Transcripción</h3>
+          <ul>
+            <li>Usa una hebra molde de ADN para sintetizar ARN.</li>
+            <li>El producto final es ARN.</li>
+            <li>La ARN polimerasa realiza este proceso.</li>
+          </ul>
+
+          <h3>Traducción</h3>
+          <ul>
+            <li>Ocurre en los ribosomas.</li>
+            <li>Se leen codones del ARN mensajero.</li>
+            <li>Se ensamblan aminoácidos para formar proteínas.</li>
+          </ul>
+
+          <h3>Enzimas importantes</h3>
+          <ul>
+            <li><strong>ADN polimerasa:</strong> sintetiza ADN.</li>
+            <li><strong>ARN polimerasa:</strong> sintetiza ARN.</li>
+            <li><strong>Ligasa:</strong> une fragmentos de ADN.</li>
+            <li><strong>Topoisomerasas:</strong> reducen tensión del ADN durante replicación.</li>
+          </ul>
+
+          <div class="box warn">
+            <strong>Qué debes saber hacer:</strong>
+            leer una hebra molde y escribir la secuencia complementaria de ARNm o la hebra codificante de ADN, cuidando los extremos 5’ y 3’.
+          </div>
+
+          <h3>Posibles confusiones comunes</h3>
+          <ul>
+            <li>Confundir hebra molde con hebra codificante.</li>
+            <li>Olvidar que en ARN se usa U en lugar de T.</li>
+            <li>Decir que el producto final de transcripción es proteína; eso corresponde a traducción, no a transcripción.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="repaso">
+      <details open>
+        <summary>10. Repaso final para el parcial</summary>
+        <div class="content">
+          <h3>Temas más probables</h3>
+          <ol>
+            <li>Enlaces químicos y propiedades del agua.</li>
+            <li>Biomoléculas y nucleótidos.</li>
+            <li>Membrana plasmática, transporte y ósmosis.</li>
+            <li>Enzimas, ATP y energía de activación.</li>
+            <li>Exergónica vs endergónica.</li>
+            <li>Fotosíntesis y fotorrespiración.</li>
+            <li>Respiración celular, ciclo de Krebs y mitocondria.</li>
+            <li>Meiosis, cromatina y variabilidad genética.</li>
+            <li>ADN, ARN, transcripción y traducción.</li>
+          </ol>
+
+          <h3>Preguntas que deberías poder responder sin dudar</h3>
+          <ul>
+            <li>¿Por qué NaCl no es un enlace covalente no polar?</li>
+            <li>¿Qué hace una enzima y qué no hace?</li>
+            <li>¿Cómo reconocer una reacción exergónica en una gráfica?</li>
+            <li>¿Qué ocurre cuando un inhibidor ocupa el sitio activo?</li>
+            <li>¿Qué diferencia hay entre producto e intermediario?</li>
+            <li>¿Dónde ocurre el ciclo de Krebs?</li>
+            <li>¿Qué molécula entra al ciclo de Krebs?</li>
+            <li>¿Qué pasa cuando el oxígeno se une a rubisco?</li>
+            <li>¿Qué diferencia hay entre metafase II y anafase II?</li>
+            <li>¿Qué significa heterocromatina?</li>
+          </ul>
+
+          <h3>Mini lista de memorización obligatoria</h3>
+          <ul>
+            <li>ATP = principal transportador de energía.</li>
+            <li>Ribosomas = ARN + proteínas.</li>
+            <li>Procariotas = sin núcleo definido.</li>
+            <li>Mitocondria = no exclusiva de animales.</li>
+            <li>Rubisco + O2 = fotorrespiración.</li>
+            <li>Oxígeno al final de la cadena respiratoria = forma agua.</li>
+            <li>Meiosis I = separa homólogos.</li>
+            <li>Meiosis II = separa cromátidas hermanas.</li>
+            <li>Heterocromatina = más compacta y menos activa.</li>
+            <li>NaCl = enlace iónico.</li>
+          </ul>
+
+          <div class="box ok">
+            <strong>Estrategia final de estudio:</strong>
+            si te queda poco tiempo, prioriza metabolismo y enzimas, célula y membrana, respiración celular, meiosis, y ADN/ARN. 
+            Esos temas conectan muchas preguntas del estilo del profesor.
+          </div>
+
+          <p class="footer-note">
+            Puedes copiar este HTML en un archivo .html y abrirlo en el navegador para estudiar como presentación interactiva con secciones plegables.
+          </p>
+        </div>
+      </details>
+    </section>
+
+  </main>
+</body>
+</html>
